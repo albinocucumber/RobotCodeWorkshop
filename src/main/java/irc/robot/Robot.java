@@ -27,9 +27,8 @@ public class Robot extends TimedRobot {
     // Runs every tick during autonomous.
     @Override
     public void autonomousPeriodic() {
-
+        // Runs all the commands
         Scheduler.getInstance().run();
-
     }
 
     // Runs once when teleoperated starts.
@@ -40,9 +39,8 @@ public class Robot extends TimedRobot {
     // Runs every tick during teleoperated.
     @Override
     public void teleopPeriodic() {
-
+        // Runs all the commands
         Scheduler.getInstance().run();
-
     }
 
 }

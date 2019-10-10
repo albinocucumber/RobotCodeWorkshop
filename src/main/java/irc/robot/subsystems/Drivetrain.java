@@ -8,7 +8,7 @@ import irc.robot.commands.Drive;
 
 public class Drivetrain extends Subsystem {
 
-    //This is a singleton. Learn more about singletons here: https://www.geeksforgeeks.org/singleton-class-java/
+    // This is a singleton. Learn more about singletons here: https://www.geeksforgeeks.org/singleton-class-java/
     private static Drivetrain instance;
     public static Drivetrain getInstance(){
         if(instance == null)
@@ -16,25 +16,20 @@ public class Drivetrain extends Subsystem {
         return instance;
     }
 
-    //Initializing all the motor controllers.
+    // Initializing all the motor controllers
     private VictorSP leftMasterVictor, rightMasterVictor;
-
     private Drivetrain(){
-
         leftMasterVictor = new VictorSP(1);
         rightMasterVictor = new VictorSP(3);
-
     }
 
-    //Simple command to set speed of the victors.
+    // Simple command to set speed of the motor controllers. It takes two inputs because we are using two Joysticks ("Tank Drive")
     public void setSpeed (double left, double right){
-
         leftMasterVictor.setSpeed(left);
         rightMasterVictor.setSpeed(right);
-
     }
 
-    //Setting Drive as the Command.
+    // Setting Drive.java as this subsystem's Command and initializing it
     @Override
     protected void initDefaultCommand() {
 
