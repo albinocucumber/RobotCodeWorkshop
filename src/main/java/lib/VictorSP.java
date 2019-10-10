@@ -1,16 +1,13 @@
 package lib;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.revrobotics.CANSparkMax;
 
-public class VictorSP extends TalonSRX {
+public class VictorSP extends CANSparkMax {
     public VictorSP(int id) {
-        super(id);
-
-        super.configFactoryDefault();
+        super(id, MotorType.kBrushless);
     }
 
     public void setSpeed(double speed) {
-        super.set(ControlMode.PercentOutput, speed);
+        super.set(speed);
     }
 }
