@@ -34,4 +34,10 @@ public class OI {
         return rightJoy.getY();
     }
 
+    public boolean getArmUpButton() {
+        return leftJoy.getRawButton(1);
+    }
+    public boolean getArmDownButton() {
+        return rightJoy.getRawButton(1);
+    }
 }
